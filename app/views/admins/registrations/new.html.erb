@@ -11,7 +11,9 @@
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>      
+      <%= (@minimum_password_length >1) ? t('devise.shared.minimum_password_length.other',count: @minimum_password_length) : t('devise.shared.minimum_password_length.one', count: @minimum_password_length)%>
+    </em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
@@ -22,7 +24,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit t('devise.shared.links.sign_up') %>
   </div>
 <% end %>
 
