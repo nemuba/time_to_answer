@@ -25,7 +25,7 @@
           unconfirmed_email: E-mail não confirmado
           unlock_token: Token de desbloqueio
           updated_at: Atualizado em
-        profile:
+        user:
           confirmation_sent_at: Confirmação enviada em
           confirmation_token: Token de confirmação
           confirmed_at: Confirmado em
@@ -53,6 +53,6 @@
         admin:
           one: Adminisrador
           other: Adminisradores
-        profile:
-          one: Perfil
-          other: Perfis
+        user:
+          one: Usuário
+          other: Usuários
