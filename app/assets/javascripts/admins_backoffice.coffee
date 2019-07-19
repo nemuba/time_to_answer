@@ -5,3 +5,6 @@
   //= require bootstrap/dist/js/bootstrap.bundle.min
   //= require jquery.easing/jquery.easing.min
   //= require sb-admin-2.min
+  //= require datatables.net/js/jquery.dataTables.min.js
+  //= require datatables.net-bs4/js/dataTables.bootstrap4.min
+  //= require datatables-demo
