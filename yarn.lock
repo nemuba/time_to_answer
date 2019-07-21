@@ -130,3 +130,8 @@ popper.js@^1.14.7:
   version "1.15.0"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.15.0.tgz#5560b99bbad7647e9faa475c6b8056621f5a4ff2"
   integrity sha512-w010cY1oCUmI+9KwwlWki+r5jxKfTFDVoadl7MSrIujHU5MJ5OR6HTDj6Xo8aoR/QsA56x8jKjA59qGH4ELtrA==
+
+toastify-js@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/toastify-js/-/toastify-js-1.6.1.tgz#2ec20654925d6f83f935d5a6907c146e6bcb67d6"
+  integrity sha512-yosiXPEdr3B9KL1rF7M/IMdw8d8Z69UJe2JsvxbfdpaL2/olqSB8tvp7/N6gkT9G46y6nqR2e62CCnf0LxeIBQ==

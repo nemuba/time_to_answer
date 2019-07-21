@@ -155,6 +155,22 @@
 
         <%= javascript_include_tag 'application' %>
         <%= javascript_include_tag 'admins_backoffice' %>
+
+        <%= javascript_tag do %>
+          <% if notice %>
+            Toastify({
+              text: "<%= notice%> ",
+              duration: 3000,
+              destination: "https://github.com/apvarun/toastify-js",
+              newWindow: true,
+              close: true,
+              gravity: "top", // `top` or `bottom`
+              position: 'right', // `left`, `center` or `right`
+              backgroundColor: "linear-gradient(to right, #96c93d,#00b09b)",
+              stopOnFocus: true // Prevents dismissing of toast on hover
+            }).showToast();
+          <% end %>
+        <% end %>
       </body>
 </html>
 

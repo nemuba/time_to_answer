@@ -1,10 +1,4 @@
-<div class="row">
-  <div class="col-lg-12">
-    <h1 class="h3 mb-4 text-gray-800">Novo usuário</h1>    
-  </div>  
-</div>
-
 <!-- Show messages errors -->
 <%= render 'admins_backoffice/shared/errors', admin: @admin %>
 <!-- Render Form creation -->
-<%= render 'admins_backoffice/admins/form', admin: @admin %>
+<%= render partial: 'admins_backoffice/admins/form', locals: {action_message: "Novo", admin: @admin} %>

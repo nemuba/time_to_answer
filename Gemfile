@@ -7,6 +7,7 @@ gem 'devise'
 gem 'rails-i18n','~>5.1'
 gem 'tty-spinner'
 gem 'faker'
+gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

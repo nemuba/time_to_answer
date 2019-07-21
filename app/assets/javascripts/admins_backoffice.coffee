@@ -8,3 +8,4 @@
   //= require datatables.net/js/jquery.dataTables.min.js
   //= require datatables.net-bs4/js/dataTables.bootstrap4.min
   //= require datatables-demo
+  //= require toastify-js/src/toastify

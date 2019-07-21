@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # localhost:3000/admins_backoffice/admins/:id/edit PUTCH
   namespace :admins_backoffice do
     get 'welcome/index' # Dashboard
-    resources :admins, except: [:delete] # Administradores
+    resources :admins # Administradores
   end
   
   # localhost:3000/site/welcome/index

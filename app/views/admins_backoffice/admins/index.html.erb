@@ -6,20 +6,6 @@
   </div>  
 </div>
 
-<% if notice %>
-  <div class="row">
-  <div class="col-lg-12">
-    <div class="card border-success mb-3">      
-      <div class="card-body text-success">        
-        <p class="card-text">
-          <%= notice %>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-<% end %>
-
 <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -48,7 +34,7 @@
                           <%= link_to edit_admins_backoffice_admin_path(admin), class: 'btn btn-info btn-circle' do %>
                             <i class="fas fa-edit"></i>
                           <% end %>
-                          <%= link_to '#', class: 'btn btn-danger btn-circle' do %>
+                          <%= link_to admins_backoffice_admin_path(admin), method: :delete, class: 'btn btn-danger btn-circle', data: {confirm: "Deseja realmente apagar esse administrador?"} do %>
                             <i class="fas fa-trash"></i>
                           <% end %>
                         </td>
@@ -56,6 +42,8 @@
                     <% end %>                                        
                   </tbody>
                 </table>
+                <%= paginate @admins %>
+                <%= page_entries_info @admins %>
               </div>
             </div>
           </div>
