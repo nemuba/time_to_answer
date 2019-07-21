@@ -1,5 +1,24 @@
 <!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800">AdminsBackoffice</h1>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="h3 mb-4 text-gray-800">AdminsBackoffice</h1>    
+  </div>  
+</div>
+
+<% if notice %>
+  <div class="row">
+  <div class="col-lg-12">
+    <div class="card border-success mb-3">      
+      <div class="card-body text-success">        
+        <p class="card-text">
+          <%= notice %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
 
 <!-- DataTales Example -->
           <div class="card shadow mb-4">
@@ -13,7 +32,11 @@
                     <tr>
                       <th>#</th>
                       <th>Email</th>                      
-                      <th>Actions</th>                      
+                      <th style="text-align: center;">
+                        <%= link_to new_admins_backoffice_admin_path, class: 'btn btn-success btn-circle' do %>
+                            <i class="fas fa-plus"></i>
+                        <% end %>
+                      </th>                      
                     </tr>
                   </thead>                  
                   <tbody>                                        
@@ -21,8 +44,8 @@
                       <tr>
                         <td><%= admin.id %></td>
                         <td><%= admin.email %></td>
-                        <td style="width: 150px;">                          
-                          <%= link_to '#', class: 'btn btn-info btn-circle' do %>
+                        <td style="text-align:center; width: 150px;">                          
+                          <%= link_to edit_admins_backoffice_admin_path(admin), class: 'btn btn-info btn-circle' do %>
                             <i class="fas fa-edit"></i>
                           <% end %>
                           <%= link_to '#', class: 'btn btn-danger btn-circle' do %>
