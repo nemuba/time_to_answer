@@ -42,8 +42,13 @@
                     <% end %>                                        
                   </tbody>
                 </table>
-                <%= paginate @admins %>
-                <%= page_entries_info @admins %>
+                <div class="d-flex justify-content-center">
+                  <%= paginate @admins %>
+                </div>
+                <div class="d-flex justify-content-start">                  
+                  <%= page_entries_info @admins %>                
+                </div>
+                
               </div>
             </div>
           </div>
