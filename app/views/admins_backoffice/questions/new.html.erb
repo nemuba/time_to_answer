@@ -1,0 +1,4 @@
+<!-- Show messages errors -->
+<%= render 'admins_backoffice/questions/shared/errors', question: @question %>
+<!-- Render Form creation -->
+<%= render partial: 'admins_backoffice/questions/form', locals: {action_message: "Nova", question: @question} %>

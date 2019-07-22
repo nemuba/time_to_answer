@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get 'welcome/index' # Dashboard
     resources :admins # Administradores
     resources :subjects # Áreas/Assuntos
+    resources :questions # Questões
   end
   
   # localhost:3000/site/welcome/index
