@@ -9,7 +9,9 @@
 <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Listando Perguntas</h6>
+              <h6 class="m-0 font-weight-bold text-primary">
+                <%= t('messages.listing', model: @questions.model_name.human(count: 2)) %>
+              </h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -17,8 +19,8 @@
                   <thead>
                     <tr>
                       <th>#</th>
-                      <th>Descrição</th>                      
-                      <th>Assunto</th>                      
+                      <th><%= translate_attribute(@questions,:description) %></th>                      
+                      <th><%= translate_attribute(@questions,:subject) %></th>                      
                       <th style="text-align: center;">
                         <%= link_to new_admins_backoffice_question_path, class: 'btn btn-success btn-circle' do %>
                             <i class="fas fa-plus"></i>
@@ -36,7 +38,9 @@
                           <%= link_to edit_admins_backoffice_question_path(question), class: 'btn btn-info btn-circle' do %>
                             <i class="fas fa-edit"></i>
                           <% end %>
-                          <%= link_to admins_backoffice_question_path(question), method: :delete, class: 'btn btn-danger btn-circle', data: {confirm: "Deseja realmente apagar essa pergunta?"} do %>
+                          <%= link_to admins_backoffice_question_path(question), method: :delete, 
+                                                                                 class: 'btn btn-danger btn-circle', 
+                                                                                 data: {confirm: t('messages.confirm_with', model: question.description.truncate(30))} do %>
                             <i class="fas fa-trash"></i>
                           <% end %>
                         </td>

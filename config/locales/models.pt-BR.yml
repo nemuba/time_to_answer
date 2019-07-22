@@ -50,10 +50,17 @@
           unlock_token: Token de desbloqueio
           updated_at: Atualizado em
         subject:
-          description: Descrição
+          id: Código
+          description: Descrição          
+          created_at: Criado em
+          updated_at: Atualizado em
         question:
+          id: Código
           description: Descrição
+          subject: Áreas/Assuntos
           subject_id: Áreas/Assuntos
+          created_at: Criado em
+          updated_at: Atualizado em
       models:
         admin:
           one: Adminisrador
@@ -65,5 +72,5 @@
           one: Área/Assunto
           other: Áreas/Assuntos
         question:
-          one: Questão
-          other: Questões
+          one: Pergunta
+          other: Perguntas

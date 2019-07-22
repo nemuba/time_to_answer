@@ -1,20 +1,25 @@
 <div class="row">
   <div class="col-lg-12">
-    <h1 class="h3 mb-4 text-gray-800"><%= action_message %> Área/Assunto</h1>    
+    <h1 class="h3 mb-4 text-gray-800">
+      <%= (action_name == 'new') ? t('messages.new', model: @subject.model_name.human) : t('messages.edit', model: @subject.model_name.human)%>            
+    </h1>    
   </div>  
 </div>
+<!-- Show messages errors -->
+<%= render 'admins_backoffice/subjects/shared/errors', subject: @subject %>
+
 <div class="row">
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header">
-        Detalhes da Área/Assunto
+        <%= t('messages.details', model: @subject.model_name.human) %>
       </div>
       <div class="card-body">
         <div class="card-text">
         <%= form_with(model: [ :admins_backoffice, @subject ], local: true) do |form| %>          
             <div class="form-group">
               <%= form.label :description %>
-              <%= form.text_field :description, class: 'form-control', placeholder: 'Escreva aqui ...' %>                
+              <%= form.text_field :description, class: 'form-control', placeholder: t('placeholders.subjects.description') %>                
             </div>            
             <%= form.submit nil, class: 'btn btn-primary float-right'%>
                                           

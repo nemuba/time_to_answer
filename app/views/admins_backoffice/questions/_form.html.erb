@@ -1,24 +1,28 @@
 <div class="row">
   <div class="col-lg-12">
-    <h1 class="h3 mb-4 text-gray-800"><%= action_message %> Pergunta</h1>    
+    <h1 class="h3 mb-4 text-gray-800">
+      <%= (action_name == 'new') ? t('messages.new', model: @question.model_name.human) : t('messages.edit', model: @question.model_name.human)%>      
+    </h1>    
   </div>  
 </div>
+<!-- Show messages errors -->
+<%= render 'admins_backoffice/questions/shared/errors', question: @question %>
 <div class="row">
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header">
-        Detalhes da Pergunta
+        <%= t('messages.details', model: @question.model_name.human) %>
       </div>
       <div class="card-body">
         <div class="card-text">
         <%= form_with(model: [ :admins_backoffice, @question ], local: true) do |form| %>          
             <div class="form-group">
               <%= form.label :description %>
-              <%= form.text_area :description, class: 'form-control', placeholder: 'Descreva aqui ...', rows: 5 %>                
+              <%= form.text_area :description, class: 'form-control', placeholder: t('placeholders.questions.description'), rows: 5 %>                
             </div>
             <div class="form-group">
               <%= form.label :subject_id %>
-              <%= form.select :subject_id, list_subjects, {prompt: true}, {class: 'form-control', placeholder: 'Senha'} %>                         
+              <%= form.select :subject_id, list_subjects, {prompt:t('placeholders.questions.subject')}, {class: 'form-control'} %>                         
             </div>  
             
 

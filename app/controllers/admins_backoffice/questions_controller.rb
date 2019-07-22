@@ -2,8 +2,8 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   before_action :set_question, only: [:edit, :update, :destroy]
   
   def index
-    #@questions = Question.includes(:subject).all.page(params[:page]).per(5)
-    @questions = Question.includes(:subject).all
+    #@questions = Question.includes(:subject).page(params[:page]).per(5)
+    @questions = Question.includes(:subject)
   end
 
   def new
