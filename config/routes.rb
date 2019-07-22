@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :admins_backoffice do
     get 'welcome/index' # Dashboard
     resources :admins # Administradores
+    resources :subjects # Áreas/Assuntos
   end
   
   # localhost:3000/site/welcome/index

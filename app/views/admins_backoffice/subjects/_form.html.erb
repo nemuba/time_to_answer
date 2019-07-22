@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="h3 mb-4 text-gray-800"><%= action_message %> Área/Assunto</h1>    
+  </div>  
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        Detalhes da Área/Assunto
+      </div>
+      <div class="card-body">
+        <div class="card-text">
+        <%= form_with(model: [ :admins_backoffice, @subject ], local: true) do |form| %>          
+            <div class="form-group">
+              <%= form.label :description %>
+              <%= form.text_field :description, class: 'form-control', placeholder: 'Escreva aqui ...' %>                
+            </div>            
+            <%= form.submit nil, class: 'btn btn-primary float-right'%>
+                                          
+            <%= link_to 'Voltar', admins_backoffice_subjects_path, class: 'btn btn-danger float-left' %>                    
+        <% end %>
+
+          
+        </div>
+      </div>
+    </div>    
+  </div>  
+</div>

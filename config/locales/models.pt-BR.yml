@@ -49,6 +49,8 @@
           unconfirmed_email: E-mail não confirmado
           unlock_token: Token de desbloqueio
           updated_at: Atualizado em
+        subject:
+          description: Descrição
       models:
         admin:
           one: Adminisrador
@@ -56,3 +58,6 @@
         user:
           one: Usuário
           other: Usuários
+        subject:
+          one: Área/Assunto
+          other: Áreas/Assuntos
