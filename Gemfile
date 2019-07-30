@@ -8,6 +8,7 @@ gem 'rails-i18n','~>5.1'
 gem 'tty-spinner'
 gem 'faker'
 gem 'kaminari'
+gem 'cocoon'
 #gem 'kaminari-i18n'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -56,6 +57,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'awesome_print'
+  gem 'rails_db', '2.0.4'
 end
 
 group :test do

@@ -43,7 +43,7 @@ private
  
   def permit_params  
     # Permitindo alguns parametros   
-    params.require('question').permit(:id,:description, :subject_id)
+    params.require(:question).permit(:id,:description, :subject_id, :answers_attributes => [:id,:description, :correct, :_destroy])
   end
 
   # Setando admin
