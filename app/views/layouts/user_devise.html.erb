@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TimeToAnswer</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application' %>
+    <%= stylesheet_link_tag    'user_devise' %>    
+  </head>
+
+  <body class="login">
+    <div>
+      <div class="login_wrapper">    
+        <%= yield %>
+      </div>
+    </div>
+  
+
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'user_devise' %>
+
+    <%= javascript_tag do %>
+          <% if flash %>
+          <% flash.each do |key, value| %>
+            Toastify({
+              text: "<%= value %> ",
+              duration: 3000,
+              destination: "https://github.com/apvarun/toastify-js",
+              newWindow: true,
+              close: true,
+              gravity: "top", // `top` or `bottom`
+              position: 'right', // `left`, `center` or `right`
+              backgroundColor: "red",
+              stopOnFocus: true // Prevents dismissing of toast on hover
+            }).showToast();
+          <% end %>
+          <% end %>
+        <% end %>
+  </body>
+</html>

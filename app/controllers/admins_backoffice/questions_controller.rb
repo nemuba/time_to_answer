@@ -6,7 +6,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
     @questions = Question.includes(:subject)
   end
 
-  def new
+  def new    
     @question = Question.new
   end
   
