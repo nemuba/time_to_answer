@@ -1,0 +1,17 @@
+<% @questions.each do |question| %>
+    <div class="card border-primary m-3">
+    <div class="card-header">
+      <%= "#{question.id} - #{question.description}" %>
+    </div>
+    <div class="card-body text-success">      
+      <p class="card-text"> 
+        Selecione a resposta correta:       
+      </p>      
+    </div>
+    <ul class="list-group list-group-flush">
+      <% question.answers.each do |answer| %>
+      <li class="list-group-item ml-3"><%= answer.description %></li>      
+      <% end %>
+    </ul>
+  </div>
+  <% end %>

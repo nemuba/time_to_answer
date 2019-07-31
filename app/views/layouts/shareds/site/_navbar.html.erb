@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">  
+  <%= link_to 'Time to Answer', root_path, class:"navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+     <%= form_with(url: site_search_path ,local: true, method: :get, class: "form-inline my-2 my-lg-0") do |f| %>                    
+        <%= f.search_field :term, class: "form-control mr-sm-2", placeholder: "Digite ..." %>
+        <%= f.submit "Pesquisar", class: "btn btn-success my-2 my-sm-0" %>        
+     <% end %>
+    </ul> 
+    
+    <ul class="navbar-nav">      
+      <% unless user_signed_in? %>        
+        <%= link_to 'Entrar', new_user_session_path, class: "nav-item nav-link active" %>                
+        
+        <%= link_to 'Cadastrar-se', new_user_registration_path, class: "nav-item nav-link" %>        
+        
+      <% else %>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= current_user.email %>
+        </a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">            
+            <%= link_to users_backoffice_welcome_index_path, class:"dropdown-item" do %>
+              <i class="fas fa-user-circle fa-sm fa-fw mr-2 text-gray-400"></i>
+              Perfil
+            <% end %>
+            <div class="dropdown-divider"></div>
+            <%= link_to destroy_user_session_path, class:"dropdown-item", method: :delete, data:{ confirm: "Deseja realmente sair?"} do %>
+              <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+              Sair
+            <% end %>
+          </div>
+        </li>
+      <% end %>      
+    </ul> 
+  </div>
+ 
+</nav>

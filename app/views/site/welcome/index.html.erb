@@ -1,14 +1,7 @@
-<h1>Site::Welcome#index</h1>
-<p>Find me in app/views/site/welcome/index.html.erb</p>
+<div class="container">
+  <%= render 'site/shared/questions' %>  
 
-<% if user_signed_in? %>
-    <%= "Usuário logado !" %>
-  <% else %>
-    <%= "Usuário não está logado !" %>
-<% end %>
-<br>
-<% if admin_signed_in? %>
-    <%= "Administrador logado !" %>
-  <% else %>
-    <%= "Administrador não está logado !" %>
-<% end %>
+   <div class="row justify-content-end mr-3"> 
+     <%= paginate @questions %>
+   </div>
+</div>

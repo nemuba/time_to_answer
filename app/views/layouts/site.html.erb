@@ -1,16 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">        
     <title>TimeToAnswer</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application' %>
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag    'site' %>
+    
   </head>
 
-  <body style="background-color: blue;">
-    <h1>Site Layout</h1>
+  <body>
+    <%= render 'layouts/shareds/site/navbar' %>
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+      <% unless params[:term] %>
+        <h1 class="display-5">Ultimas Perguntas</h1>        
+      <% else %>
+        <h4 class="display-5 ml-3"><%= "Resultado(s) para o termo \"#{params[:term]}\": #{@search_count} pergunta(s) encontrado(s)."%></h4>          
+      <% end %>      
+      </div>
+    </div>
+
     <%= yield %>
+
+    <%= javascript_include_tag 'application' %>    
+    <%= javascript_include_tag 'site' %>
+
+    <script>window.jQuery || document.write('<script src="jquery-3.3.1-slim.min.js"><\/script>')</script>
+
+    <%= javascript_tag do %>
+      <% if notice %>
+        Toastify({
+          text: "<%= notice%> ",
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: 'right', // `left`, `center` or `right`
+          backgroundColor: "linear-gradient(to right, blue,#00b09b)",
+          stopOnFocus: true // Prevents dismissing of toast on hover
+        }).showToast();
+      <% end %>
+    <% end %>
+
   </body>
 </html>
