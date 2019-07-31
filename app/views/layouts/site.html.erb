@@ -14,17 +14,7 @@
 
   <body>
     <%= render 'layouts/shareds/site/navbar' %>
-
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-      <% unless params[:term] %>
-        <h1 class="display-5">Ultimas Perguntas</h1>        
-      <% else %>
-        <h4 class="display-5 ml-3"><%= "Resultado(s) para o termo \"#{params[:term]}\": #{@search_count} pergunta(s) encontrado(s)."%></h4>          
-      <% end %>      
-      </div>
-    </div>
-
+    
     <%= yield %>
 
     <%= javascript_include_tag 'application' %>    
