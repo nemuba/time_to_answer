@@ -1,19 +1,22 @@
 <% @questions.each do |question| %>
- <%= form_with(url: site_answer_path, local: true) do |form| %>    
-    <div class="card border-primary m-3">
-    <div class="card-header">
-      <%= "#{question.id} - #{question.description}" %>
+ <%= form_with(url: site_answer_path) do |form| %>    
+    <div class="card border-primary m-3" id="question_<%= question.id%>">
+    <div class="card-header bg-primary text-white">
+      <h5>
+        <span class="badge badge-danger"><%= question.subject.description %></span> - 
+        <%= question.description %>
+      </h5>      
     </div>
     <div class="card-body text-success">      
       <p class="card-text"> 
-        Selecione a resposta correta:       
+        Selecione a resposta correta:    
       </p>      
     </div>
     <ul class="list-group list-group-flush">
       <% question.answers.each do |answer| %>
       <li class="list-group-item ml-3">
         <div class="form-check">
-          <%= radio_button_tag 'answer', answer.id, false, {class: "form-check-input",id: "answer_#{answer.id}"} %>
+          <%= radio_button_tag 'answer_id', answer.id, false, {class: "form-check-input",id: "answer_#{answer.id}"} %>
           <%= label_tag 'answer',answer.description, {class: "form-check-label", for: "answer_#{answer.id}"} %>          
         </div>         
       </li>           

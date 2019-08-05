@@ -1,0 +1,39 @@
+var CardQuestion = document.getElementById('question_<%= @answer.question.id%>');
+var CarHeader = CardQuestion.children[0];
+CardQuestion.classList.remove('border-primary');
+CardQuestion.classList.remove('border-success');
+CardQuestion.classList.remove('border-danger');
+
+CarHeader.classList.remove('bg-primary');
+CarHeader.classList.remove('bg-success');
+CarHeader.classList.remove('bg-danger');
+
+if (<%= @answer.correct %>){
+  CardQuestion.classList.add('border-success');
+  CarHeader.classList.add('bg-success');
+  Toastify({
+    text: "Você Acertou !",
+    duration: 3000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: 'right', // `left`, `center` or `right`
+    backgroundColor: "linear-gradient(to right, green,#00b09b)",
+    stopOnFocus: true // Prevents dismissing of toast on hover
+  }).showToast();
+}else{
+  CardQuestion.classList.add('border-danger');
+  CarHeader.classList.add('bg-danger');
+  Toastify({
+    text: "Você errou !",
+    duration: 3000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: 'right', // `left`, `center` or `right`
+    backgroundColor: "linear-gradient(to right, red,#00b09b)",
+    stopOnFocus: true // Prevents dismissing of toast on hover
+  }).showToast();
+}

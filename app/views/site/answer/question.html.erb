@@ -1,2 +1,10 @@
-<h1>O ID da questão selecionada é <%= params[:answer] %></h1>
+
+<div class="jumbotron">
+  <% if @answer.correct %>
+    <h1 class="display-4 ml-3 text-success">Resposta correta \o/ !</h1>
+  <% else %>
+    <h1 class="display-4 ml-3 text-danger">Resposta errada :( !</h1>
+  <% end %>
+</div>
+
 

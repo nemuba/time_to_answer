@@ -1,9 +1,13 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-  <% unless params[:term] %>
-    <h1 class="display-5">Ultimas Perguntas</h1>        
-  <% else %>
-    <h4 class="display-5 ml-3"><%= "Resultado(s) para o termo \"#{params[:term]}\": #{@search_count} pergunta(s) encontrado(s)."%></h4>          
-  <% end %>      
+    <% if user_signed_in? %>
+      <% unless params[:term] %>
+        <h1 class="display-5">Ultimas Perguntas</h1>        
+      <% else %>
+        <h4 class="display-5 ml-3"><%= "Resultado(s) para o termo \"#{params[:term]}\": #{@search_count} pergunta(s) encontrado(s)."%></h4>          
+      <% end %>
+    <% else %>
+        <h1>Faça o Login para começar a responder</h1>
+    <% end %>      
   </div>
 </div>
