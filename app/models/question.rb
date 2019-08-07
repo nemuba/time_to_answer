@@ -12,6 +12,13 @@ class Question < ApplicationRecord
     .page(page)
   }
 
+  scope :search_questions_subject, -> (subject_id, page){
+     includes(:answers)
+     .where(subject_id: subject_id)
+     .page(page)
+  }
+  # Ex:- scope :active, -> {where(:active => true)}
+
   scope :search_questions_count, -> (term){
     includes(:answers)
     .where("lower(description) LIKE ?", "%#{term.downcase}%")

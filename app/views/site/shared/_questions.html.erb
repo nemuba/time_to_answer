@@ -3,7 +3,9 @@
     <div class="card border-primary m-3" id="question_<%= question.id%>">
     <div class="card-header bg-primary text-white">
       <h5>
-        <span class="badge badge-danger"><%= question.subject.description %></span> - 
+        <span class="badge badge-danger">
+          <%= link_to question.subject.description, site_search_subject_path(question.subject.id), class: 'text-white' %>
+        </span> - 
         <%= question.description %>
       </h5>      
     </div>
