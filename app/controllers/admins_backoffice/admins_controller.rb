@@ -2,15 +2,18 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   before_action :set_admin, only: [:edit, :update, :destroy]
   before_action :verify_password, only: [:update]
 
+  # route: /admins_backoffice/admins => method: GET	
   def index
     #@admins = Admin.all.page(params[:page]).per(5)
     @admins = Admin.all
   end
 
+  # route: /admins_backoffice/admins/new => method: GET	
   def new
     @admin = Admin.new
   end
   
+  # route: /admins_backoffice/admins => method: POST
   def create
     @admin = Admin.new(permit_params)
     
@@ -21,8 +24,10 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
     end
   end
   
+  # route: /admins_backoffice/admins/:id/edit => method: GET
   def edit ;end
 
+  # route: /admins_backoffice/admins/:id => method: PATCH
   def update         
     if @admin.update(permit_params)        
       redirect_to admins_backoffice_admins_path, notice: "Administrador atualizado com sucesso !"
@@ -31,6 +36,7 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
     end
   end
   
+  # route: /admins_backoffice/admins/:id => method: DELETE	
   def destroy    
     if @admin.destroy     
       redirect_to admins_backoffice_admins_path, notice: "Administrador excluido com sucesso !"
