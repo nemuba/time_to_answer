@@ -68,7 +68,7 @@ namespace :dev do
   task add_answer_questions: :environment do
     show_spinner("Adicionando perguntas e respostas...") do
       Subject.all.each do |subject|
-        rand(1..5).times do |i|
+        rand(1..10).times do |i|
 
           params = create_questions_params(subject)
           answers_array = params[:question][:answers_attributes]
@@ -79,6 +79,15 @@ namespace :dev do
 
           Question.create!(params[:question])
         end
+      end
+    end
+  end
+
+  desc 'Reseta o contador dos assuntos'
+  task reset_subject_counter: :environment do
+    show_spinner("Resetando contador dos assuntos...") do
+      Subject.find_each do |s|    
+        Subject.reset_counters s.id, :questions
       end
     end
   end
