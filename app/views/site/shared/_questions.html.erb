@@ -4,7 +4,7 @@
     <div class="card-header bg-primary text-white">
       <h5>
         <span class="badge badge-danger">
-          <%= link_to question.subject.description, site_search_subject_path(question.subject.id), class: 'text-white' %>
+          <%= link_to "#{question.subject.description} (#{question.subject.questions.count})", site_search_subject_path(question.subject.id,question.subject.description), class: 'text-white' %>
         </span> - 
         <%= question.description %>
       </h5>      

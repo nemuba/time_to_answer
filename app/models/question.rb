@@ -17,7 +17,11 @@ class Question < ApplicationRecord
      .where(subject_id: subject_id)
      .page(page)
   }
-  # Ex:- scope :active, -> {where(:active => true)}
+  scope :search_subject_count, -> (subject_id) { 
+    includes(:answers)
+    .where(subject_id: subject_id)
+    .count
+  }  
 
   scope :search_questions_count, -> (term){
     includes(:answers)
@@ -27,7 +31,7 @@ class Question < ApplicationRecord
 
   scope :last_questions, -> (page){
     includes(:answers)
-    .order('created_at desc')
+    .order('created_at asc')
     .page(page)
   }
   

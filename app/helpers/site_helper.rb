@@ -6,7 +6,7 @@ module SiteHelper
     when 'questions'
       "Resultado(s) para o termo \"#{params[:term]}\": #{@search_count} pergunta(s) encontrado(s)."
     when 'subject'
-      "Filtro: #{@questions.first.subject.description}"
+      "Filtro: #{params[:subject]} - #{@search_subject_count} encontrado(s)."
     end
   end
   
