@@ -59,7 +59,7 @@
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'users_backoffice' %>
 
-    <%= javascript_tag do %>
+    <%= javascript_tag do %>                   
           <% if notice %>
             Toastify({
               text: "<%= notice%> ",
@@ -69,10 +69,15 @@
               close: true,
               gravity: "top", // `top` or `bottom`
               position: 'right', // `left`, `center` or `right`
-              backgroundColor: "linear-gradient(to right, #96c93d,#00b09b)",
+              backgroundColor: "linear-gradient(to right, #5bf859,#0fb4a1)",
               stopOnFocus: true // Prevents dismissing of toast on hover
             }).showToast();                    
           <% end %>
-        <% end %>
+    <% end %>
+    <%= javascript_tag do %>
+       $( function(){
+            $(".datepicker").datepicker();
+          });
+    <% end %>
   </body>
 </html>

@@ -9,6 +9,7 @@ gem 'tty-spinner'
 gem 'faker'
 gem 'kaminari'
 gem 'cocoon'
+
 #gem 'kaminari-i18n'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
