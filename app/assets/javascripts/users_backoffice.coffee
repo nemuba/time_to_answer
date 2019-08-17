@@ -7,3 +7,4 @@
 //= require nprogress/nprogress
 //= require malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar
 //= require custom.min
+//= require toastify-js/src/toastify

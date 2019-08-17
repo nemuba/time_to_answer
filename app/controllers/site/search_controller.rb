@@ -7,8 +7,7 @@ class Site::SearchController < SiteController
   end
   
   # route: /site/subject/:subject_id/:subject => GET
-  def subject
-    @search_subject_count = Question.search_subject_count(params[:subject_id])
+  def subject    
     @questions = Question.search_questions_subject(params[:subject_id],params[:page])
   end
   

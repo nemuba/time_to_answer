@@ -28,20 +28,37 @@
 
     <%= javascript_tag do %>
           <% if flash %>
-          <% flash.each do |key, value| %>
-            Toastify({
-              text: "<%= value %> ",
-              duration: 3000,
-              destination: "https://github.com/apvarun/toastify-js",
-              newWindow: true,
-              close: true,
-              gravity: "top", // `top` or `bottom`
-              position: 'right', // `left`, `center` or `right`
-              backgroundColor: "red",
-              stopOnFocus: true // Prevents dismissing of toast on hover
-            }).showToast();
+            <% flash.each do |key, value| %>
+              Toastify({
+                text: "<%= value %> ",
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: 'right', // `left`, `center` or `right`
+                backgroundColor: "red",
+                stopOnFocus: true // Prevents dismissing of toast on hover
+              }).showToast();
+            <% end %>
           <% end %>
+
+          <% unless resource.errors.empty? %>
+            <% resource.errors.full_messages.each do |msg| %>
+              Toastify({
+                text: "<%= msg %> ",
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: 'right', // `left`, `center` or `right`
+                backgroundColor: "red",
+                stopOnFocus: true // Prevents dismissing of toast on hover
+              }).showToast();
+            <% end %>
           <% end %>
+
         <% end %>
   </body>
 </html>

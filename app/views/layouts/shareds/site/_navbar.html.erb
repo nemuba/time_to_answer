@@ -21,7 +21,7 @@
       <% else %>
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= current_user.email %>
+          <%= (current_user.full_name.blank?) ? current_user.email: current_user.full_name %>
         </a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">            
             <%= link_to users_backoffice_welcome_index_path, class:"dropdown-item" do %>
