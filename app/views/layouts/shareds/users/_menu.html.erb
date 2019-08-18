@@ -1,7 +1,7 @@
 <!-- menu profile quick info -->
 <div class="profile clearfix">
   <div class="profile_pic">
-    <%= image_tag 'img.jpg', alt:"...", class:"img-circle profile_img" %>
+    <%= link_to image_tag(avatar_url, alt:"...", class:"img-circle profile_img"), '#', "data-toggle":"modal", "data-target":"#myModal" %>
   </div>
   <div class="profile_info">
     <span>Bem Vindo,</span>

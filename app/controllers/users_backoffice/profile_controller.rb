@@ -11,8 +11,12 @@ class UsersBackoffice::ProfileController < UsersBackofficeController
   # localhost:3000/users_backoffice/profile/:id => PATCH 
   def update    
     if @user.update_attributes(permit_params)
-      bypass_sign_in(@user)        
-      redirect_to users_backoffice_profile_path, notice: "Usuário atualizado com sucesso !"
+      bypass_sign_in(@user) 
+      if permit_params[:user_profile_attributes][:avatar]
+        redirect_to users_backoffice_welcome_index_path, notice: "Avatar atualizado com sucesso !"
+      else         
+        redirect_to users_backoffice_profile_path, notice: "Usuário atualizado com sucesso !"
+      end
     else        
       render :edit
     end
@@ -32,7 +36,7 @@ class UsersBackoffice::ProfileController < UsersBackofficeController
     params.require(:user).permit(:id, :first_name, 
                                  :last_name, :email, 
                                  :password, :password_confirmation,
-                                 :user_profile_attributes => [:id, :address, :gender, :birthdate])
+                                 :user_profile_attributes => [:id, :address, :gender, :birthdate, :avatar])
   end
   
   # setando usuário

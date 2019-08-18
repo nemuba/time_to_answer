@@ -9,7 +9,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <%= image_tag 'img.jpg', alt:'User image' %>
+                    <%= image_tag avatar_url, alt:'User image' %>
                     <%= (current_user.full_name.blank?) ? current_user.email : current_user.full_name %>
                     <span class=" fa fa-angle-down"></span>
                   </a>

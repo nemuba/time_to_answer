@@ -51,6 +51,14 @@
           unconfirmed_email: E-mail não confirmado
           unlock_token: Token de desbloqueio
           updated_at: Atualizado em
+        user_profile:
+          id: Código
+          address: Endereço 
+          gender: Sexo  
+          birthdate: Data de Nascimento
+          avatar: Imagem  
+          created_at: Criado em
+          updated_at: Atualizado em
         subject:
           id: Código
           description: Descrição          
@@ -78,6 +86,7 @@
         user:
           one: Usuário
           other: Usuários
+        user_profile: Perfil do Usuário
         subject:
           one: Área/Assunto
           other: Áreas/Assuntos

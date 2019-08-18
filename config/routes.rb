@@ -36,6 +36,9 @@ Rails.application.routes.draw do
   # localhost:3000/inicio => method: GET
   get 'inicio', to: 'site/welcome#index'
   
+  # localhost:3000/backoffice => method: GET
+  get 'backoffice', to: 'admins_backoffice/welcome#index'
+  
   # localhost:3000/ => method: GET
   root to: 'site/welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
