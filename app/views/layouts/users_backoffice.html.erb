@@ -24,8 +24,7 @@
             <div class="navbar nav_title" style="border: 0;">
               <%= link_to  users_backoffice_welcome_index_path, class:"site_title" do %>
                 <i class="fa fa-paw"></i> <span>User backoffice</span>
-              <% end %>
-              
+              <% end %>              
             </div>
 
             <div class="clearfix"></div>
@@ -68,8 +67,7 @@
           </div>
           <div class="modal-body">
             <%= form.fields_for :user_profile do |f| %>
-                <div class="form-group">
-                  <%= f.label :avatar %> 
+                <div class="form-group">                  
                   <%= image_tag(avatar_url, alt:"...", class:"img-circle profile_img") %>
                   <%= f.file_field :avatar %>                    
                 </div>             
