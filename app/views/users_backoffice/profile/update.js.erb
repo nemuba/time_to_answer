@@ -1,0 +1,17 @@
+$('#avatarModal').modal('hide');
+
+document.getElementById('imgAvatarLg').src = "<%= url_for(@user.user_profile.avatar) %>";
+document.getElementById('imgAvatarMd').src = "<%= url_for(@user.user_profile.avatar) %>";
+document.getElementById('imgAvatarSm').src = "<%= url_for(@user.user_profile.avatar) %>";
+
+Toastify({
+          text: "Avatar atualizado com sucesso !",
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: 'right', // `left`, `center` or `right`
+          backgroundColor: "linear-gradient(to right, #5bf859,#0fb4a1)",
+          stopOnFocus: true // Prevents dismissing of toast on hover
+        }).showToast();   

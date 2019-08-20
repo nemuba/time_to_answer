@@ -1,11 +1,16 @@
 <%= render 'site/shared/jumbotron' %>  
 
-<% if user_signed_in? %>
   <div class="container">
   <%= render 'site/shared/questions' %>  
-
-   <div class="row justify-content-end mr-3"> 
-     <%= paginate @questions %>
-   </div>
+   
+  <% if user_signed_in? %>
+  <div class="row justify-content-end mr-3"> 
+    <%= paginate @questions %>
+  </div>
+  <% else %> 
+  <div class="alert alert-warning" role="alert">
+    <strong>Efetue o login para continuar respondendo !</strong>
+  </div>
+  <% end %>
+      
 </div>
-<% end %>
