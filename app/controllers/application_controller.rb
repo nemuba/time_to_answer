@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :check_pagination
+  before_action :set_global_params
   layout :layout_by_devise
   
   private
@@ -9,9 +10,13 @@ class ApplicationController < ActionController::Base
   end
 
   def check_pagination
-    unless user_signed_in?
+    unless user_signed_in? or admin_signed_in?
       params.extract!(:page)
     end
+  end
+
+  def set_global_params
+    $global_params = params
   end
   
   
