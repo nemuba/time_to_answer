@@ -1,13 +1,12 @@
 class User < ApplicationRecord
   # Callback after_create
   after_create :set_statistic
-  # Validation
+  # Validation whith on and unless
   validates :first_name, :last_name, presence: true, length: {minimum:3}, on: :update, unless: :reset_password_token_present?
     
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
   # Virtual field 
   def full_name
