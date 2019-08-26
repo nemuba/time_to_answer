@@ -1,4 +1,6 @@
 class Question < ApplicationRecord
+  # Callback after_create
+  after_create :set_statistic
   # validations
   validates :description, presence: :true
   
@@ -28,9 +30,9 @@ class Question < ApplicationRecord
 
   # Question.search_questions_subject(subject_id,page)
   scope :search_questions_subject, -> (subject_id, page){
-     includes(:answers)
-     .where(subject_id: subject_id)
-     .page(page)
+    includes(:answers)
+    .where(subject_id: subject_id)
+    .page(page)
   }
 
   # Question.search_questions_count(term)
@@ -46,5 +48,11 @@ class Question < ApplicationRecord
     .order('created_at asc')
     .page(page)
   }
+
+  private
+
+  def set_statistic
+    AdminStatistic.set_event(AdminStatistic::EVENTS[:total_questions])
+  end
   
 end

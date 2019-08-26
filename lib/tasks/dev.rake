@@ -68,7 +68,7 @@ namespace :dev do
   task add_answer_questions: :environment do
     show_spinner("Adicionando perguntas e respostas...") do
       Subject.all.each do |subject|
-        rand(1..10).times do |i|
+        rand(1..5).times do |i|
 
           params = create_questions_params(subject)
           answers_array = params[:question][:answers_attributes]
